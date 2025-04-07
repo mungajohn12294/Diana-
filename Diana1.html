@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hey You, Beautiful!</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 40px;
+      color: #e91e63;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      animation: pop 2s ease-in-out infinite;
+    }
+
+    @keyframes pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .gif {
+      width: 250px;
+      border-radius: 20px;
+      margin: 20px 0;
+    }
+
+    .button {
+      background-color: #ff4081;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 25px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #f50057;
+      transform: scale(1.1);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.3em;
+      display: none;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hey Diana, My Sunshine!</h1>
+  <img class="gif" src="diana.jpg" alt="Love Cat" />
+
+  <p>You’re too cute to be real. So I had to code something to prove you are!</p>
+
+  <div>
+    <button class="button" onclick="showLove()">Click for a Smile</button>
+    <button class="button" onclick="showJoke()">Wanna Laugh?</button>
+    <button class="button" onclick="confetti()">Press for Love Magic</button>
+  </div>
+
+  <div class="message" id="loveMsg">You are my favorite notification. I’d never put you on silent.</div>
+  <div class="message" id="jokeMsg">Are you made of copper and tellurium? Because you’re Cu-Te!</div>
+
+  <div class="footer">
+    From the one who’s always smiling when thinking of you.
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById('loveMsg').style.display = 'block';
+      document.getElementById('jokeMsg').style.display = 'none';
+    }
+
+    function showJoke() {
+      document.getElementById('jokeMsg').style.display = 'block';
+      document.getElementById('loveMsg').style.display = 'none';
+    }
+
+    function confetti() {
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+        heart.innerText = "❤️";
+        heart.style.position = "absolute";
+        heart.style.fontSize = "2em";
+        heart.style.top = Math.random() * window.innerHeight + "px";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 2000);
+      }
+      alert("You're loved more than words can say!");
+    }
+  </script>
+
+</body>
+</html>
